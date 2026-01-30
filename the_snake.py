@@ -1,3 +1,4 @@
+"""Необходимые импорты."""
 from random import choice, randint
 
 import pygame
@@ -30,9 +31,10 @@ clock = pygame.time.Clock()
 
 
 class GameObject:
-    """Базовый класс, от которого наследуются другие объекты"""
+    """Базовый класс, от которого наследуются другие объекты."""
 
     def __init__(self) -> None:
+        """Инициализация класса."""
         self.position = ((SCREEN_WIDTH // 2), (SCREEN_HEIGHT // 2))
         self.body_color = None
 
@@ -45,6 +47,7 @@ class Apple(GameObject):
     """Класс, описывающий яблоко."""
 
     def __init__(self):
+        """Инициализация класса."""
         super().__init__()
         self.body_color = APPLE_COLOR
         self.randomize_position()
@@ -63,9 +66,10 @@ class Apple(GameObject):
 
 
 class Snake(GameObject):
-    """Класс, описывающий змейку"""
+    """Класс, описывающий змейку."""
 
     def __init__(self):
+        """Инициализация класса."""
         super().__init__()
         self.body_color = SNAKE_COLOR
         self.length = 1
@@ -140,6 +144,7 @@ def handle_keys(game_object):
 
 
 def main():
+    """Основная функция."""
     pygame.init()
 
     apple = Apple()
